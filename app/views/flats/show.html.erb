@@ -1,0 +1,57 @@
+<div class="banner" style="background-image: url('<%= @flat.picture %>')"></div>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="title">
+          <h1>Show <%= @flat.name %> </h1>
+          <h4><%= @flat.address %></h4>
+        </div>
+        <div class="description">
+          <h4>A bit more about this flat...</h4>
+          <p><%= @flat.description %></p>
+          <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=10 Clifton Gardens London W9 1DT&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C10 Clifton Gardens London W9 1DT&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>    </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="book">
+          <div class="form">
+            <h4>Book this place!</h4>
+            <form>
+              <div class="input-group">
+                <span class="input-group-addon">From:</span>
+                <input type="text" name="from" placeholder="12/10/2017" class="form-control"><br>
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">To:</span>
+                <input type="text" name="to" placeholder="18/10/2017" class="form-control">
+              </div>
+              <input type="submit" name="book" value="Book"class="btn btn-success mt-2" style="width: 100%" ><br>
+            </form>
+          </div>
+          <div class="details">
+            <h4>Details</h4>
+            <div class="flex">
+              <div class="price">
+                <i class="fas fa-euro-sign"></i>
+                <%= @flat.price_per_night %>
+              </div>
+              <div class="guests">
+                <i class="fas fa-user-alt"></i>
+                <span><%= @flat.number_of_guests %></span>
+              </div>
+            </div>
+          </div>
+          <div class="share">
+            <h6 class="no-mb">Share</h6>
+            <div class="flex">
+              <i class="fab fa-facebook-square"></i>
+              <i class="fab fa-twitter-square"></i>
+              <i class="fab fa-pinterest"></i>
+              <i class="fas fa-envelope-square"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Edit flat</h1>
+  <%= simple_form_for @flat do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :price_per_night %>
+    <%= f.input :number_of_guests %>
+    <%= f.input :picture %>
+    <%= f.submit "edit flat", class: "btn btn-primary" %>
+  <% end %>
+</div>

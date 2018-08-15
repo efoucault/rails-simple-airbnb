@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>All our flats</h1>
+  <div class="row">
+    <div class="cards">
+      <% if @flats == [] %>
+        <%= "Désolé, on n'a aucun appart correspondant à cette recherche" %>
+      <% else %>
+      <% @flats.each do |flat| %>
+      <div class="col-xs-4">
+        <div class="card">
+          <div class="flat-card-image" style="background-image: url('<%= flat.picture %>')"></div>
+          <div class="flat-info">
+            <h3><%= "#{flat.name}" %></h3>
+            <h4><%= "#{flat.address}" %></h4>
+            <div class="details">
+              <div class="price">
+                <i class="fas fa-euro-sign"></i>
+                <span><%= "#{flat.price_per_night}" %></span>
+              </div>
+              <div class="guests">
+                <i class="fas fa-user-alt"></i>
+                <span><%= "#{flat.number_of_guests}" %></span>
+              </div>
+            </div>
+            <div class="buttons">
+              <%= link_to "More info", flat_path(flat), class: "btn btn-success" %>
+              <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-success" %>
+              <%= link_to "Remove", flat_path(flat), method: :delete, class: "btn btn-success" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+      <% end %>
+  </div>
+</div>
